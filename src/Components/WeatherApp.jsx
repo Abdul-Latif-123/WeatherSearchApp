@@ -51,7 +51,7 @@ function WeatherApp() {
                 <div className='text-center m-4'>
                     {error && <h4 style={{ color: 'red' }}>{error}</h4>}
                     <h4>{weather && weather.name ? weather.name + ", " + weather.sys.country : ""}</h4>
-                    <h2 className='my-4'>{weather && weather.main ? weather.main.temp : ""}<span className='text-danger'>{weather && weather.main ? " °Kelvin" : ""}</span></h2>
+                    <h2 className='my-4'>{weather && weather.main ? Math.round(weather.main.temp - 273.15) : ""}<span className='text-danger'>{weather && weather.main ? " °Celsius" : ""}</span></h2>
                     <h4>{weather && weather.weather ? capitalizeFirstLetter(weather.weather[0].description) : ""}</h4>
                 </div>
             </div>
